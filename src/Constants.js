@@ -1,0 +1,1 @@
+export const API_BASE_URL = "https://63e3eecac919fe386c12534f.mockapi.io/fakeData";
