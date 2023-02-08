@@ -1,25 +1,38 @@
 import logo from './logo.svg';
+import React, {useState, useEffect} from "react";
+import axios from "axios";
 import './App.css';
 
-function App() {
+const baseApiUrl = "https://63e3eecac919fe386c12534f.mockapi.io/fakeData";
+
+export default function App() {
+  const [todos, setTodo] = useState([]);
+
+  useEffect(() => {
+    axios.get(baseApiUrl).then((response) => {
+      setTodo(response.data);
+    });
+  }, []);
+
+  function createTodo() {
+    axios
+      .post(baseApiUrl, {
+        task: "write a note",
+        done: false
+      })
+      .then((response) => {
+        setTodo(response.data);
+      });
+  }
+
+  // if (todos.length < 1) return <div>No Data</div>;
+
+  console.log('todos', todos);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <button onClick={createTodo}>Create Todo</button>
     </div>
   );
 }
 
-export default App;
