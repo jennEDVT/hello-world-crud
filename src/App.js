@@ -25,15 +25,15 @@ export default function App() {
               id={todoItem.id}/>
   }
 
-  const todoList = (todos.length > 0) ? todos.map(createTodoMarkup) : "";
+  let todoList = (todos.length > 0) ? todos.map(createTodoMarkup) : "";
 
-  console.log('todos', todos);
+  console.log('todos is app.js', todos, todoList);
 
   return (
-    <>
+    <div className="page">
       {todoList}
       <TodoForm todos={todos} setTodo={setTodo} />
-    </>
+    </div>
   );
 }
 

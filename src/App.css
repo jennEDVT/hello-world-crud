@@ -1,0 +1,12 @@
+.page {
+    padding: 50px;
+}
+
+.todo__todoItem {
+    display: flex;
+    margin: 10px 0;
+}
+
+.todoItem__task {
+    margin-right: 10px;
+}
