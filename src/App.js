@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import TodoForm from "./components/TodoForm.js";
@@ -26,8 +25,6 @@ export default function App() {
   }
 
   let todoList = (todos.length > 0) ? todos.map(createTodoMarkup) : "";
-
-  console.log('todos is app.js', todos, todoList);
 
   return (
     <div className="page">

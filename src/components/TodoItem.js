@@ -9,7 +9,6 @@ export default function TodoItem({task, id, setTodo, todos}) {
                 const updatedTodos = [...todos]; // create a copy of the state array because splice() alters the original
                 updatedTodos.splice(todos.indexOf(item), 1)
                 setTodo(updatedTodos);
-                console.log('todos in TodoItem.js', todos);
             }
         })
     }
